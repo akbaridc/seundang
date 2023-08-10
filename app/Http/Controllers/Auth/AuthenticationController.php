@@ -8,27 +8,28 @@ class AuthenticationController extends Controller
 {
     public function login()
     {
-
-        return view('templates.auth.content.sign-in', [
+        $paramsData = [
             'title' => 'Login',
-            'includesJs' => [
+            'extendsJs' => [
                 asset('assets/template/libs/particles.js/particles.js'),
                 asset('assets/template/js/pages/particles.app.js'),
                 asset('assets/template/js/pages/password-addon.init.js'),
             ]
-        ]);
+        ];
+        return view('templates.auth.content.sign-in', $paramsData);
     }
 
     public function register()
     {
 
-        return view('templates.auth.content.sign-up', [
+        $paramsData = [
             'title' => 'Register',
-            'includesJs' => [
+            'extendsJs' => [
                 asset('assets/template/libs/particles.js/particles.js'),
                 asset('assets/template/js/pages/particles.app.js'),
                 asset('assets/template/js/pages/password-addon.init.js'),
             ]
-        ]);
+        ];
+        return view('templates.auth.content.sign-up', $paramsData);
     }
 }

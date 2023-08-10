@@ -8,11 +8,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('templates.frontend.app', [
+        $paramsData = [
             'title' => 'Homepage',
-            'includesJs' => [
+            'extendsJs' => [
                 asset('assets/template/js/pages/landing.init.js')
             ]
-        ]);
+        ];
+        return view('templates.frontend.app', $paramsData);
     }
 }

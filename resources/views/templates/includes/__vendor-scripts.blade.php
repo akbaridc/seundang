@@ -7,8 +7,8 @@
 <script src="{{ asset('assets/template') }}/libs/swiper/swiper-bundle.min.js"></script>
 
 <script src="{{ asset('assets/template') }}/js/plugins.js"></script>
-@if (isset($includesJs))
-    @foreach ($includesJs as $value)
+@if (isset($extendsJs))
+    @foreach ($extendsJs as $value)
         <script src="{{ $value }}"></script>
     @endforeach
 @endif

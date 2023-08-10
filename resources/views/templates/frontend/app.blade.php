@@ -11,47 +11,47 @@
         <div class="vertical-overlay" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent.show"></div>
 
         <!-- start hero section -->
-        @include('templates.frontend.content.hero-section')
+        @include('frontend.landing-page.hero-section')
         <!-- end hero section -->
 
         <!-- start client section -->
-        @include('templates.frontend.content.client-section')
+        @include('frontend.landing-page.client-section')
         <!-- end client section -->
 
         <!-- start services -->
-        @include('templates.frontend.content.services-section')
+        @include('frontend.landing-page.services-section')
         <!-- end services -->
 
         <!-- start features -->
-        @include('templates.frontend.content.features-section')
+        @include('frontend.landing-page.features-section')
         <!-- end features -->
 
         <!-- start plan -->
-        @include('templates.frontend.content.plan-section')
+        @include('frontend.landing-page.plan-section')
         <!-- end plan -->
 
         <!-- start faqs -->
-        @include('templates.frontend.content.faq-section')
+        @include('frontend.landing-page.faq-section')
         <!-- end faqs -->
 
         <!-- start review -->
-        @include('templates.frontend.content.review-section')
+        @include('frontend.landing-page.review-section')
         <!-- end review -->
 
         <!-- start counter -->
-        @include('templates.frontend.content.counter-section')
+        @include('frontend.landing-page.counter-section')
         <!-- end counter -->
 
         <!-- start Work Process -->
-        @include('templates.frontend.content.work-section')
+        @include('frontend.landing-page.work-section')
         <!-- end Work Process -->
 
         <!-- start team -->
-        @include('templates.frontend.content.team-section')
+        @include('frontend.landing-page.team-section')
         <!-- end team -->
 
         <!-- start contact -->
-        @include('templates.frontend.content.contact-section')
+        @include('frontend.landing-page.contact-section')
         <!-- end contact -->
 
         <!-- Start footer -->
