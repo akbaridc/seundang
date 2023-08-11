@@ -34,6 +34,6 @@ class RolesAndPermissionsTableSeeder extends Seeder
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
         $this->superadmin = Role::create(['name' => RoleType::SUPERADMIN]);
-        $this->member = Role::create(['name' => RoleType::MEMBER, 'guard_name' => 'student']);
+        $this->member = Role::create(['name' => RoleType::MEMBER, 'guard_name' => 'member']);
     }
 }

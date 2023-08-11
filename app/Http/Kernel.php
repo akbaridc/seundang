@@ -49,8 +49,8 @@ class Kernel extends HttpKernel
             'auth.is_active'
         ],
 
-        'auth.student' => [
-            'auth:student',
+        'auth.member' => [
+            'auth:member',
             'auth.is_active'
         ],
     ];

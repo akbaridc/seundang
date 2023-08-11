@@ -38,10 +38,9 @@
             </ul>
 
             <div class="">
-                <a href="{{ route('backoffice.sign-in') }}"
-                    class="btn btn-link fw-medium text-decoration-none text-dark">Sign
+                <a href="{{ route('google.login') }}" class="btn btn-link fw-medium text-decoration-none text-dark">Sign
                     in</a>
-                <a href="{{ route('backoffice.sign-up') }}" class="btn btn-primary">Sign Up</a>
+
             </div>
         </div>
 
