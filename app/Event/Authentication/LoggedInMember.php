@@ -19,7 +19,6 @@ class LoggedInMember
 
     public $user;
     public $request;
-    public $url;
 
     public function __construct(Member $user, $request)
     {

@@ -27,10 +27,12 @@ class LoginTrailRecorded
      */
     public function handle(AuthenticationLoggedIn $event)
     {
-        $event->user->update([
+        $user = $event->user;
+        $request = $event->request;
+        $user->update([
             'last_login' => now(),
-            'last_login_useragent' => $event->request->server('HTTP_USER_AGENT'),
-            'last_login_ip' => $event->request->ip(),
+            'last_login_useragent' => $request->server('HTTP_USER_AGENT'),
+            'last_login_ip' => $request->ip(),
             'last_login_url' => url()->full(),
         ]);
     }
