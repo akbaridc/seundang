@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events\Authentication;
+namespace App\Event\Authentication;
 
 use App\Models\Member\Member;
 use App\Models\Student\Student;
@@ -15,21 +15,15 @@ use Illuminate\Queue\SerializesModels;
 
 class LoggedInMember
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable, SerializesModels;
 
-    public $member;
+    public $user;
     public $request;
+    public $url;
 
-    /**
-     * Create a new event instance.
-     *
-     * @param Member $member
-     * @param Request $request
-     * @return void
-     */
-    public function __construct(Member $member, Request $request)
+    public function __construct(Member $user, $request)
     {
-        $this->member = $member;
+        $this->user = $user;
         $this->request = $request;
     }
 }

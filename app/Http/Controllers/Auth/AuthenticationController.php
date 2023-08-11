@@ -43,7 +43,7 @@ class AuthenticationController extends Controller
         ]);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            // LoggedIn::dispatch($this->guard()->user(), $request);
+            LoggedIn::dispatch(auth()->user(), $request);
             return redirect()->intended('/backoffice/dashboard');
         } else {
             Auth::logout();

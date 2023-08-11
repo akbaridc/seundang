@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Member;
 
+use App\Event\Authentication\LoggedInMember;
 use App\Http\Controllers\Controller;
 use App\Models\Member\Member;
 use Illuminate\Http\Request;
@@ -41,8 +42,10 @@ class MemberController extends Controller
             //     'last_login_url' => url()->full(),
             // ]);
             //TODO : HANDLE DISPATCH EVENT
-            // LoggedInStudent::dispatch(auth('student')->user(), $request);
+            // LoggedInMember::dispatch(auth()->user(), $request);
+            event(new LoggedInMember($member, $request));
             // TODO : MEMBER REDIRECT
+
             return redirect()->route('member.profile.index');
         }
         return redirect()->route('landing.index')->with('error', 'Invalid Credentials or User is Not Activated');
