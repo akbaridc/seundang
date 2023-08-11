@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Event\Authentication\LoggedIn;
+use App\Event\Authentication\LoggedInMember;
+use App\Listeners\Authentication\LoginTrailRecorded;
+use App\Listeners\Authentication\LoginTrailRecordedMember;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -17,6 +21,12 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+        LoggedIn::class => [
+            LoginTrailRecorded::class
+        ],
+        LoggedInMember::class => [
+            LoginTrailRecordedMember::class
         ],
     ];
 
