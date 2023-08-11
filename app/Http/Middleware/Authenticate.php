@@ -14,8 +14,10 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        if (! $request->expectsJson()) {
-            return route('login');
+        if (request()->is('backoffice*')) {
+            return route('backoffice.sign-in');
+        } else {
+            return route('landing.index');
         }
     }
 }

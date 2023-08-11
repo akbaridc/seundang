@@ -13,6 +13,3 @@ use App\Http\Controllers\Auth\AuthenticationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/sign-in', [AuthenticationController::class, 'login'])->name('sign-in');
-Route::get('/sign-up', [AuthenticationController::class, 'register'])->name('sign-up');

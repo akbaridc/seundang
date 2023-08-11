@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Event\Authentication\LoggedIn;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthenticationController extends Controller
 {
@@ -16,12 +19,11 @@ class AuthenticationController extends Controller
                 asset('assets/template/js/pages/password-addon.init.js'),
             ]
         ];
-        return view('templates.auth.content.sign-in', $paramsData);
+        return view('auth.sign-in', $paramsData);
     }
 
     public function register()
     {
-
         $paramsData = [
             'title' => 'Register',
             'extendsJs' => [
@@ -30,6 +32,32 @@ class AuthenticationController extends Controller
                 asset('assets/template/js/pages/password-addon.init.js'),
             ]
         ];
-        return view('templates.auth.content.sign-up', $paramsData);
+        return view('auth.sign-up', $paramsData);
+    }
+
+    public function doLogin(Request $request)
+    {
+        $credentials = $request->validate([
+            "email" => "required",
+            "password" => "required"
+        ]);
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            // LoggedIn::dispatch($this->guard()->user(), $request);
+            return redirect()->intended('/backoffice/dashboard');
+        } else {
+            Auth::logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            return redirect('/backoffice')->with('error', 'User tidak aktif');
+        }
+
+        return back()->with('error', 'Email atau password salah!');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/backoffice');
     }
 }

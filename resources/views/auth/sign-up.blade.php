@@ -63,7 +63,7 @@
                                 <button class="btn btn-success w-100" type="submit">Sign Up</button>
                             </div>
 
-                            @include('templates.auth.content.sso', [
+                            @include('auth.sso', [
                                 'titleSSO' => 'Create account with',
                             ])
                         </form>
@@ -75,7 +75,7 @@
             <!-- end card -->
 
             <div class="mt-4 mb-4 text-center">
-                <p class="mb-0">Already have an account ? <a href="{{ route('auth.sign-in') }}"
+                <p class="mb-0">Already have an account ? <a href="{{ route('backoffice.sign-in') }}"
                         class="fw-semibold text-primary text-decoration-underline"> Signin </a> </p>
             </div>
 

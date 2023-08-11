@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\User;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,8 +21,38 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'phone',
+        'avatar',
+        'gender',
+        'address',
+        'is_active',
+        'last_login',
+        'last_login_ip',
+        'last_login_useragent',
+        'last_login_url',
+        'token',
+        'settings',
     ];
+
+    protected $statuses = array(
+        0 => 'Inactive',
+        1 => 'Active'
+    );
+
+    protected $appends = [
+        'gender_description',
+    ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    protected $guard_name = 'web';
+
+    public function getIsActiveAttribute($value)
+    {
+        return $this->statuses[$value];
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -39,7 +69,4 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
 }

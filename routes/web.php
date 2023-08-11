@@ -14,4 +14,6 @@ use App\Http\Controllers\Frontend\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::middleware(['auth.memberorguest'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('landing.index');
+});
