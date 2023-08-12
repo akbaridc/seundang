@@ -35,17 +35,8 @@ class MemberController extends Controller
 
         if ($member->is_active) {
             Auth::guard('member')->login($member);
-            // $member->update([
-            //     'last_login' => now(),
-            //     'last_login_useragent' => $request->server('HTTP_USER_AGENT'),
-            //     'last_login_ip' => $request->ip(),
-            //     'last_login_url' => url()->full(),
-            // ]);
-            //TODO : HANDLE DISPATCH EVENT
-            // LoggedInMember::dispatch(auth()->user(), $request);
             event(new LoggedInMember($member, $request));
             // TODO : MEMBER REDIRECT
-
             return redirect()->route('member.profile.index');
         }
         return redirect()->route('landing.index')->with('error', 'Invalid Credentials or User is Not Activated');

@@ -33,6 +33,7 @@
     <!-- END layout-wrapper -->
 
     @include('templates.backend.includes.__vendor-script')
+    @stack('addon-scripts')
 </body>
 
 </html>
