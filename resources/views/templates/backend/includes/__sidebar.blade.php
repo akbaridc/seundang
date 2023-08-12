@@ -35,12 +35,27 @@
                         <i class="las la-tachometer-alt"></i> <span data-key="t-widgets">Dashboard</span>
                     </a>
                 </li>
-                <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                <li class="menu-title"><span>Menu</span></li>
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="/backoffice/user">
-                        <i class="las la-tachometer-alt"></i> <span data-key="t-dashboards">Member</span>
+                        <i class="las la-tachometer-alt"></i> <span>Member</span>
                     </a>
 
+                </li> <!-- end Dashboard Menu -->
+                <li class="menu-title"><span>Settings</span></li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="/backoffice/post/faq">
+                        <i class="las la-question-circle"></i> <span>FAQ</span>
+                    </a>
+                    <a class="nav-link menu-link" href="/backoffice/post/term-condition">
+                        <i class="las la-book"></i><span>Term n Conditions</span>
+                    </a>
+                    <a class="nav-link menu-link" href="/backoffice/post/privacy-policy">
+                        <i class="las la-book"></i><span>Kebijakan dan Privasi</span>
+                    </a>
+                    <a class="nav-link menu-link" href="/backoffice/site">
+                        <i class="lab la-chrome"></i> <span>Site</span>
+                    </a>
                 </li> <!-- end Dashboard Menu -->
             </ul>
         </div>

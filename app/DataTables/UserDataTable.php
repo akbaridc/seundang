@@ -25,6 +25,8 @@ class UserDataTable extends DataTable
             ->eloquent($query)
             ->addColumn('action', function ($query) {
                 $btn = '<a href="" class="btn btn-primary btn-sm"><i class="las la-pen"></i></a>';
+                $btn .= '<a href="" class="btn btn-danger btn-sm"><i class="las la-trash"></i></a>';
+
                 return $btn;
             })
             ->addColumn('update', function ($query) {
@@ -81,7 +83,7 @@ class UserDataTable extends DataTable
             Column::make("email")->title("Email"),
             Column::make("phone")->title("No. HP"),
             Column::make("address")->title("Alamat"),
-            Column::make("gender")->title("Jenis Kelamin"),
+            Column::make("gender_description")->title("Jenis Kelamin"),
             Column::computed('update')->name("updated_at")->title("Terakhir di Update"),
             Column::computed('action')->title('Aksi')->orderable(false)->searchable(false)->exportable(false),
         ];

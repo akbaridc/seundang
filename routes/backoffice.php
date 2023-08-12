@@ -25,4 +25,12 @@ Route::middleware(['auth.backoffice'])->group(function () {
     Route::get('/logout', [AuthenticationController::class, 'logout'])->name('logout');
 
     Route::resource('user', 'Backend\User\UserController');
+    Route::get('/post/faq', 'Backend\Post\PostController@faq')->name('post.faq');
+    Route::get('/post/term-condition', 'Backend\Post\PostController@termCondition')->name('post.term-condition');
+    Route::get('/post/privacy-policy', 'Backend\Post\PostController@privacyPolicy')->name('post.privacy-policy');
+    Route::get('/post/edit/{type}', 'Backend\Post\PostController@edit')->name('post.edit');
+    Route::post('/post/update/{post}', 'Backend\Post\PostController@update')->name('post.update');
+
+    Route::get('/site', 'Backend\Site\SiteController@index')->name('site.index');
+    Route::post('/site/update/{site}', 'Backend\Site\SiteController@update')->name('site.update');
 });
