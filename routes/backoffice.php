@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthenticationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\Admin\DashboardController;
+use App\Http\Controllers\Backend\User\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,6 @@ Route::get('/sign-up', [AuthenticationController::class, 'register'])->name('sig
 Route::middleware(['auth.backoffice'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/logout', [AuthenticationController::class, 'logout'])->name('logout');
+
+    Route::resource('user', 'Backend\User\UserController');
 });

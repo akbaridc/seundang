@@ -8,7 +8,8 @@
 <script src="{{ asset('assets/template') }}/libs/jquery/dist/jquery.min.js"></script>
 <!-- Sweet Alerts js -->
 <script src="{{ asset('assets/template') }}/libs/sweetalert2/sweetalert2.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 @if (Session::get('success'))
     <script>
