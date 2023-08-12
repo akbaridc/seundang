@@ -7,7 +7,7 @@
 
                     <h4 class="card-title">Data Member</h4>
                     <p class="card-title-desc">Daftar member </p>
-                    {!! $dataTable->table(['class' => 'table table-striped dt-responsive nowrap w-100']) !!}
+                    {!! $dataTable->table(['class' => 'table table-striped dt-responsive nowrap table-striped align-middle w-100']) !!}
 
                 </div>
             </div>
