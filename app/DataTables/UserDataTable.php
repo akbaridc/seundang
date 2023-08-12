@@ -24,7 +24,7 @@ class UserDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->addColumn('action', function ($query) {
-                $btn = '<a href="" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>';
+                $btn = '<a href="" class="btn btn-primary btn-sm"><i class="las la-pen"></i></a>';
                 return $btn;
             })
             ->addColumn('update', function ($query) {
@@ -48,7 +48,7 @@ class UserDataTable extends DataTable
     public function html()
     {
         return $this->builder()
-            ->addTableClass('table table-bordered align-middle dt-responsive  nowrap w-100')
+            ->addTableClass('table table-bordered dt-responsive nowrap table-striped align-middle w-100')
             ->setTableId('draft_pengajuan-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
@@ -60,10 +60,11 @@ class UserDataTable extends DataTable
             ])
             ->buttons(
                 Button::make('pageLength'),
-                Button::make('export'),
+                Button::make('excel'),
                 Button::make('print'),
-                Button::make('reset'),
-                Button::make('reload')
+                Button::make('pdf'),
+                // Button::make('reset'),
+                // Button::make('reload')
             );
     }
 
@@ -81,8 +82,8 @@ class UserDataTable extends DataTable
             Column::make("phone")->title("No. HP"),
             Column::make("address")->title("Alamat"),
             Column::make("gender")->title("Jenis Kelamin"),
-            Column::computed('action')->title('Aksi')->orderable(false)->searchable(false)->exportable(false),
             Column::computed('update')->name("updated_at")->title("Terakhir di Update"),
+            Column::computed('action')->title('Aksi')->orderable(false)->searchable(false)->exportable(false),
         ];
     }
 
