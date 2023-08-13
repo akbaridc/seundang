@@ -17,11 +17,11 @@ class SiteController extends Controller
         ]);
     }
 
-    public function edit(Site $site)
+    public function edit()
     {
         return view('backend.sites.edit', [
             'title' => 'Edit Site',
-            'resource' => $site
+            'resource' => Site::first(),
         ]);
     }
 
