@@ -28,9 +28,9 @@ class SiteController extends Controller
     public function update(Request $request, Site $site)
     {
         $site->fill($request->all());
-        $site->logo = $request->hasFile('logo') ?
-            $request->logo->store('logo', 'public') :
-            RouteHelper::ImageUrlToDb($request->logo);
+        if ($request->hasFile('logo')) {
+            $site->logo = $request->logo->store('logo', 'public');
+        }
         $site->save();
 
         return redirect()->route('backoffice.site.index')->with('success', 'Site berhasil disimpan');
