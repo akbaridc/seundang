@@ -32,5 +32,6 @@ Route::middleware(['auth.backoffice'])->group(function () {
     Route::post('/post/update/{post}', 'Backend\Post\PostController@update')->name('post.update');
 
     Route::get('/site', 'Backend\Site\SiteController@index')->name('site.index');
+    Route::get('/site/edit', 'Backend\Site\SiteController@edit')->name('site.edit');
     Route::post('/site/update/{site}', 'Backend\Site\SiteController@update')->name('site.update');
 });

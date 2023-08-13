@@ -9,7 +9,7 @@
                             <h4 class="card-title ">Site</h4>
                         </div>
                         <div class="col-auto">
-                            <a href="" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('backoffice.site.edit') }}" class="btn btn-primary">Edit</a>
                         </div>
                     </div>
                     <div class="row">
@@ -21,7 +21,7 @@
                             <p>{{ $resource->description ?? '-' }}</p>
 
                             <h6>About Us</h6>
-                            <p>{{ $resource->about_us ?? '-' }}</p>
+                            <p>{{ $resource->about ?? '-' }}</p>
 
                             <h6>Site Keywords</h6>
                             <p>{{ $resource->site_keywords ?? '-' }}</p>
@@ -30,7 +30,7 @@
                             <p>{{ $resource->address ?? '-' }}</p>
 
                             <h6>Nomor Telepon</h6>
-                            <p>{{ $resource->phone_number ?? '-' }}</p>
+                            <p>{{ $resource->phone ?? '-' }}</p>
 
                             <h6>Whatsapp</h6>
                             <p>{{ $resource->whatsapp ?? '-' }}</p>
