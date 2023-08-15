@@ -15,7 +15,9 @@
                         </div>
                     </div>
                     <p>Description</p>
-                    <p>{!! $post->content !!}</p>
+                    <div class="snow-editor" style="height: 300px;">
+                        {!! $post->content !!}
+                    </div>
                 </div>
             </div>
         </div> <!-- end col -->
