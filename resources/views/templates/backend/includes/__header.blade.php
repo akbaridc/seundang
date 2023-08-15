@@ -34,6 +34,11 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
 
+    <!-- quill css -->
+    <link href="{{ asset('assets/template') }}/libs/quill/quill.core.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/template') }}/libs/quill/quill.bubble.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/template') }}/libs/quill/quill.snow.css" rel="stylesheet" type="text/css" />
+
     @if (isset($extendsCss))
         @foreach ($extendsCss as $value)
             <link rel="stylesheet" type="text/css" href="{{ $value }}" />
